@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+!/node_modules/langchain/dist/chains/conversational_retrieval_chain.d.ts
 /.pnp
 .pnp.js
 
