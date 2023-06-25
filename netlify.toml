@@ -1,6 +1,5 @@
 [build.environment]
-  NODE_VERSION = "18.16.1"
-  NETLIFY_NEXT_PLUGIN_SKIP = "true"
+  NODE_VERSION = "19.2.0"
 
 [functions]
   directory = ".netlify/functions"
