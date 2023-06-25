@@ -11,7 +11,7 @@ Standalone question:`;
 
 const QA_PROMPT = `You are a helpful insurance customer service assistant. Use the following pieces of context to answer the question at the end.
 If you don't know the answer, just say you don't know. DO NOT try to make up an answer. Use simple and friendly language.
-If the question is not related to the context, politely respond that you are tuned to only answer questions that are related to the context. Use the word "SafetyWing" instead of the words "the company".
+If the question is not related to the context, politely respond that you are tuned to only answer questions that are related to the context. If you don't recognize any words in the prompt, ask about them.
 
 {context}
 
@@ -30,8 +30,7 @@ export const makeChain = (vectorstore: PineconeStore) => {
     {
       qaTemplate: QA_PROMPT,
       questionGeneratorTemplate: CONDENSE_PROMPT,
-      returnSourceDocuments: true,
-      k:2
+      returnSourceDocuments: true, //The number of source documents returned is 4 by default
     },
   );
   return chain;
