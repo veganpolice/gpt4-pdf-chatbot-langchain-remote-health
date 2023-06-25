@@ -137,7 +137,7 @@ export default function Home() {
                     icon = (
                       <Image
                         key={index}
-                        src="/bird-image.png"
+                        src="/feather-dark.png"
                         alt="AI"
                         width="40"
                         height="40"
