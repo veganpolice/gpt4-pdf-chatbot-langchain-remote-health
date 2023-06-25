@@ -1,9 +1,7 @@
 [build.environment]
   NODE_VERSION = "18.16.1"
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
 
 [functions]
   directory = ".netlify/functions"
   node_bundler = "esbuild"
-
-[build.environment]
-    NETLIFY_NEXT_PLUGIN_SKIP = "true"
