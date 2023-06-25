@@ -5,7 +5,7 @@ import { makeChain } from '@/utils/makechain';
 import { pinecone } from '@/utils/pinecone-client';
 import { PINECONE_INDEX_NAME, PINECONE_NAME_SPACE } from '@/config/pinecone';
 
-export default async function handler(
+module.exports = async function handler(
   req: NextApiRequest,
   res: NextApiResponse,
 ) {
