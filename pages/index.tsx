@@ -122,8 +122,8 @@ export default function Home() {
 
   const removeTextBeforeDocs = (str: string) => {
     const regex = /.*?(?=docs)/;
-    return str.replace(regex, '').substring(5).slice(0, -4);;
-  }
+    return str.replace(regex, '').substring(5).slice(0, -4);
+  };
 
   return (
     <>
@@ -133,13 +133,17 @@ export default function Home() {
             {' '}
           </h1>
           <h1 className="text-2xl font-bold leading-[1.1] tracking-tighter text-left">
-            Remote Health premium plan AI
+            Remote Health AI
           </h1>
           <h3 className="text-1xl leading-[1.1] tracking-tighter text-left">
-            <a href="https://safetywing.com/remote-health/premium-community-plan-2.0.pdf">Community Premium plan policy document</a>
+            <a href="https://safetywing.com/remote-health/premium-community-plan-2.0.pdf">
+              Community Premium plan policy document
+            </a>
           </h3>
           <h3 className="text-1xl leading-[1.1] tracking-tighter text-left">
-            <a href="https://safetywing.com/remote-health/faq">Remote health member FAQ</a>
+            <a href="https://safetywing.com/remote-health/faq">
+              Remote health member FAQ
+            </a>
           </h3>
           <main className={styles.main}>
             <div className={styles.cloud}>
@@ -209,7 +213,10 @@ export default function Home() {
                                       {doc.pageContent}
                                     </ReactMarkdown>
                                     <p className="mt-2">
-                                      <b>Source:</b> {removeTextBeforeDocs(doc.metadata.source)}
+                                      <b>Source:</b>{' '}
+                                      {removeTextBeforeDocs(
+                                        doc.metadata.source,
+                                      )}
                                     </p>
                                   </AccordionContent>
                                 </AccordionItem>
@@ -273,13 +280,12 @@ export default function Home() {
           </main>
         </div>
         <footer className="m-auto p-4">
-          Prototype for SafetyWing by{' '}
-          <a href="https://github.com/veganpolice">veganpolice</a>. Based on
-          LangChainAI demo by{' '}
-          <a href="https://twitter.com/mayowaoshin">
-            {' '}
-            Mayo (Twitter: @mayowaoshin).
-          </a>
+          Warning: Answers may not be accurate. Confirm all responses with the{' '}
+          <u>
+            <a href="https://safetywing.com/contact">
+              SafetyWing customer care team.
+            </a>
+          </u>
         </footer>
       </Layout>
     </>
