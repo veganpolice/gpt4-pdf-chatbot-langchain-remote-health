@@ -124,8 +124,9 @@ export default function Home() {
     <>
       <Layout>
         <div className="mx-auto flex flex-col gap-4">
+          <h3 className="text-2xl leading-[1.1] tracking-tighter text-center">Chat with the </h3>
           <h1 className="text-2xl font-bold leading-[1.1] tracking-tighter text-center">
-            Chat with the Remote Health premium plan
+            Remote Health premium policy doc
           </h1>
           <main className={styles.main}>
             <div className={styles.cloud}>
@@ -261,7 +262,7 @@ export default function Home() {
           </main>
         </div>
         <footer className="m-auto p-4">
-          Prototype for SafetyWing. Based on LangChainAI demo by{' '}
+          Prototype for SafetyWing by <a href="https://github.com/veganpolice">veganpolice</a>. Based on LangChainAI demo by{' '}
           <a href="https://twitter.com/mayowaoshin">
             {' '}
             Mayo (Twitter: @mayowaoshin).
