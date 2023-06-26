@@ -151,7 +151,7 @@ export default function Home() {
                     icon = (
                       <Image
                         key={index}
-                        src="/usericon.png"
+                        src="/birdicon.png"
                         alt="Me"
                         width="30"
                         height="30"
@@ -224,8 +224,8 @@ export default function Home() {
                     name="userInput"
                     placeholder={
                       loading
-                        ? 'Waiting for response...'
-                        : 'Ask a question about your policy'
+                        ? 'Waiting for response 🐣'
+                        : 'Any questions? 🐥'
                     }
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
