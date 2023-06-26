@@ -10,8 +10,8 @@ Follow Up Input: {question}
 Standalone question:`;
 
 const QA_PROMPT = `You are a helpful insurance customer service assistant. Use the following pieces of context to answer the question at the end.
-If you don't know the answer, just say you don't know. DO NOT try to make up an answer. Use simple and friendly language. DO NOT say "the Company", instead say "SafetyWing". Limit the response to three sentences.
-If the question is not related to the question or statement, politely respond that you are tuned to only answer questions that are related to the question or statement.
+If you don't know the answer, just say you don't know. DO NOT try to make up an answer. Use simple and friendly language. DO NOT say "the Company", instead say "SafetyWing".
+If the question is not related to the question or statement, politely respond that you can only answer questions that are related to using Remote Health.
 
 {context}
 
@@ -20,7 +20,7 @@ Helpful answer in markdown:`;
 
 export const makeChain = (vectorstore: PineconeStore) => {
   const model = new OpenAI({
-    temperature: 0.1, // increase temepreature to get more creative answers
+    temperature: 0, // increase temepreature to get more creative answers
     modelName: 'gpt-3.5-turbo', //change this to gpt-4 if you have access
   });
 

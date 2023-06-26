@@ -25,7 +25,7 @@ export default function Home() {
   }>({
     messages: [
       {
-        message: 'Hi, what would you like to know about your policy?',
+        message: 'Hi, what would you like to know?',
         type: 'apiMessage',
       },
     ],
@@ -124,10 +124,18 @@ export default function Home() {
     <>
       <Layout>
         <div className="mx-auto flex flex-col gap-4">
-          <h3 className="text-2xl leading-[1.1] tracking-tighter text-center">Chat with the </h3>
-          <h1 className="text-2xl font-bold leading-[1.1] tracking-tighter text-center">
-            Remote Health premium plan policy doc
+          <h1 className="text-2xl font-bold leading-[1.1] tracking-tighter text-left">
+            {' '}
           </h1>
+          <h1 className="text-2xl font-bold leading-[1.1] tracking-tighter text-left">
+            Remote Health premium plan AI
+          </h1>
+          <h3 className="text-1xl leading-[1.1] tracking-tighter text-left">
+            <a href="https://safetywing.com/remote-health/premium-community-plan-2.0.pdf">Community Premium plan policy document</a>
+          </h3>
+          <h3 className="text-1xl leading-[1.1] tracking-tighter text-left">
+            <a href="https://safetywing.com/remote-health/faq">Remote health member FAQ</a>
+          </h3>
           <main className={styles.main}>
             <div className={styles.cloud}>
               <div ref={messageListRef} className={styles.messagelist}>
@@ -151,7 +159,7 @@ export default function Home() {
                     icon = (
                       <Image
                         key={index}
-                        src="/birdicon.png"
+                        src="/birdicon-3.png"
                         alt="Me"
                         width="30"
                         height="30"
@@ -223,9 +231,7 @@ export default function Home() {
                     id="userInput"
                     name="userInput"
                     placeholder={
-                      loading
-                        ? 'Waiting for response 🐣'
-                        : 'Any questions? 🐥'
+                      loading ? 'Waiting for response 🐣' : 'Any questions? 🐥'
                     }
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
@@ -262,7 +268,9 @@ export default function Home() {
           </main>
         </div>
         <footer className="m-auto p-4">
-          Prototype for SafetyWing by <a href="https://github.com/veganpolice">veganpolice</a>. Based on LangChainAI demo by{' '}
+          Prototype for SafetyWing by{' '}
+          <a href="https://github.com/veganpolice">veganpolice</a>. Based on
+          LangChainAI demo by{' '}
           <a href="https://twitter.com/mayowaoshin">
             {' '}
             Mayo (Twitter: @mayowaoshin).
