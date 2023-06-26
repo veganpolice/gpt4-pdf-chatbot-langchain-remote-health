@@ -126,7 +126,7 @@ export default function Home() {
         <div className="mx-auto flex flex-col gap-4">
           <h3 className="text-2xl leading-[1.1] tracking-tighter text-center">Chat with the </h3>
           <h1 className="text-2xl font-bold leading-[1.1] tracking-tighter text-center">
-            Remote Health premium policy doc
+            Remote Health premium plan policy doc
           </h1>
           <main className={styles.main}>
             <div className={styles.cloud}>
