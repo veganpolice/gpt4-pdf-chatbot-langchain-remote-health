@@ -291,9 +291,11 @@ export default function Home() {
         <footer className="m-auto p-4">
           ⚠️ Warning: This prototype is being tested. Answers may not be
           accurate.{' '}
-          <a href="https://github.com/veganpolice/gpt4-pdf-chatbot-langchain-remote-health">
-            Code link.
-          </a>
+          <u>
+            <a href="https://github.com/veganpolice/gpt4-pdf-chatbot-langchain-remote-health">
+              See the code.
+            </a>
+          </u>
         </footer>
       </Layout>
     </>
