@@ -39,6 +39,7 @@ export default function Home() {
 
   useEffect(() => {
     textAreaRef.current?.focus();
+    messageListRef.current?.scrollTo(0, messageListRef.current.scrollHeight);
   }, []);
 
   //handle form submission
@@ -289,7 +290,10 @@ export default function Home() {
         </div>
         <footer className="m-auto p-4">
           ⚠️ Warning: This prototype is being tested. Answers may not be
-          accurate.
+          accurate.{' '}
+          <a href="https://github.com/veganpolice/gpt4-pdf-chatbot-langchain-remote-health">
+            Code link.
+          </a>
         </footer>
       </Layout>
     </>
