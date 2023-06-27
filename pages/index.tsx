@@ -135,14 +135,22 @@ export default function Home() {
           <h1 className="text-2xl font-bold leading-[1.1] tracking-tighter text-left">
             Remote Health AI
           </h1>
-          <h3 className="text-1xl leading-[1.1] tracking-tighter text-left">
+          <h2 className="text-l font leading-[1.1] tracking-tighter text-left">
+            🤖 I know about...
+          </h2>
+          <h3 className="text-1xl font-bold leading-[1.1] tracking-tighter text-left">
             <a href="https://safetywing.com/remote-health/premium-community-plan-2.0.pdf">
               Community Premium plan policy document
             </a>
           </h3>
-          <h3 className="text-1xl leading-[1.1] tracking-tighter text-left">
+          <h3 className="text-1xl font-bold leading-[1.1] tracking-tighter text-left">
+            <a href="https://safetywing.com/remote-health/premium+maternity-community-plan-2.0.pdf">
+              Community Premium + Maternity plan policy document
+            </a>
+          </h3>
+          <h3 className="text-1xl font-bold leading-[1.1] tracking-tighter text-left">
             <a href="https://safetywing.com/remote-health/faq">
-              Remote health member FAQ
+              Remote Health FAQ
             </a>
           </h3>
           <main className={styles.main}>
@@ -280,12 +288,8 @@ export default function Home() {
           </main>
         </div>
         <footer className="m-auto p-4">
-          Warning: Answers may not be accurate. Confirm all responses with the{' '}
-          <u>
-            <a href="https://safetywing.com/contact">
-              SafetyWing customer care team.
-            </a>
-          </u>
+          ⚠️ Warning: This prototype is being tested. Answers may not be
+          accurate.
         </footer>
       </Layout>
     </>
