@@ -12,6 +12,7 @@ Standalone question:`;
 const QA_PROMPT = `You are a helpful insurance customer service assistant. Use the following pieces of context to answer the question at the end.
 If you don't know the answer, just say you don't know. DO NOT try to make up an answer. Use simple and friendly language. DO NOT say "the Company", instead say "SafetyWing".
 If the question is not related to the question or statement, politely respond that you can only answer questions that are related to using Remote Health.
+The user's policy is the Remote Health Premium Plan policy document.
 
 {context}
 
@@ -21,7 +22,7 @@ Helpful answer in markdown:`;
 export const makeChain = (vectorstore: PineconeStore) => {
   const model = new OpenAI({
     temperature: 0, // increase temepreature to get more creative answers
-    modelName: 'gpt-3.5-turbo', //change this to gpt-4 if you have access
+    modelName: 'gpt-3.5-turbo-0613', //change this to gpt-4 if you have access
   });
 
   const chain = ConversationalRetrievalQAChain.fromLLM(
