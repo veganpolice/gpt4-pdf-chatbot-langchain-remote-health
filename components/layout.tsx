@@ -4,7 +4,7 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div className="mx-auto flex flex-col space-y-4">
+    <div className="bg-[#323288] mx-auto flex flex-col space-y-4">
       <header className="container top-0 z-40 bg-white">
       </header>
       <div>

@@ -130,11 +130,8 @@ export default function Home() {
     <>
       <Layout>
         <div className="mx-auto flex flex-col gap-4">
-          <h1 className="text-2xl font-bold leading-[1.1] tracking-tighter text-left">
-            {' '}
-          </h1>
-          <h1 className="text-2xl font-bold leading-[1.1] tracking-tighter text-left">
-            Remote Health Premium Plus
+          <h1 className="text-2xl text-[#E1E1F4] leading-[1.1] tracking-tighter text-left">
+            Remote Health Premium Plus A.I.
           </h1>
           <main className={styles.main}>
             <div className={styles.cloud}>
@@ -228,7 +225,7 @@ export default function Home() {
                     id="userInput"
                     name="userInput"
                     placeholder={
-                      loading ? 'Waiting for response 🐣' : 'Any questions? 🐥'
+                      loading ? 'Waiting for response 🐣' : 'Ask a question... 🐥'
                     }
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
@@ -264,7 +261,7 @@ export default function Home() {
             )}
           </main>
         </div>
-        <footer className="m-auto p-4">
+        <footer className="m-auto p-4 text-[#B7B7E5]">
           ⚠️ Warning: This prototype is being tested. Answers may not be
           accurate.{' '}
           <u>
