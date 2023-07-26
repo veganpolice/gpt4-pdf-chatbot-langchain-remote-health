@@ -134,7 +134,7 @@ export default function Home() {
             {' '}
           </h1>
           <h1 className="text-2xl font-bold leading-[1.1] tracking-tighter text-left">
-            Remote Health Premium+
+            Remote Health Premium Plus
           </h1>
           <main className={styles.main}>
             <div className={styles.cloud}>
