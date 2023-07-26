@@ -95,12 +95,12 @@
 
 .usermessage {
   background: #ffffff;
-  padding: 1.5rem;
+  padding: 1rem;
   color: #000;
 }
 
 .usermessagewaiting {
-  padding: 1.5rem;
+  padding: 1rem;
   color: #000;
   background: linear-gradient(to left, #07080938, #1a1c2024, #07080936);
   background-size: 200% 200%;
@@ -121,7 +121,7 @@
 
 .apimessage {
   background: #f9fafb;
-  padding: 1.5rem;
+  padding: 1rem;
   color: #000;
   animation: fadein 0.5s;
 }
@@ -212,7 +212,7 @@
 .footer {
   color: #5f6368;
   font-size: 0.8rem;
-  margin: 1.5rem;
+  margin: 1rem;
 }
 
 .footer a {

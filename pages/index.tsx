@@ -25,7 +25,7 @@ export default function Home() {
   }>({
     messages: [
       {
-        message: 'Hi, what would you like to know?',
+        message: 'What would you like to know?',
         type: 'apiMessage',
       },
     ],
@@ -134,26 +134,8 @@ export default function Home() {
             {' '}
           </h1>
           <h1 className="text-2xl font-bold leading-[1.1] tracking-tighter text-left">
-            Remote Health AI
+            Remote Health Premium+
           </h1>
-          <h2 className="text-l font leading-[1.1] tracking-tighter text-left">
-            🤖 I know about...
-          </h2>
-          <h3 className="text-1xl font-bold leading-[1.1] tracking-tighter text-left">
-            <a href="https://safetywing.com/remote-health/premium-community-plan-2.0.pdf">
-              Community Premium plan policy document
-            </a>
-          </h3>
-          <h3 className="text-1xl font-bold leading-[1.1] tracking-tighter text-left">
-            <a href="https://safetywing.com/remote-health/premium+maternity-community-plan-2.0.pdf">
-              Community Premium + Maternity plan policy document
-            </a>
-          </h3>
-          <h3 className="text-1xl font-bold leading-[1.1] tracking-tighter text-left">
-            <a href="https://safetywing.com/remote-health/faq">
-              Remote Health FAQ
-            </a>
-          </h3>
           <main className={styles.main}>
             <div className={styles.cloud}>
               <div ref={messageListRef} className={styles.messagelist}>
@@ -221,12 +203,6 @@ export default function Home() {
                                     <ReactMarkdown linkTarget="_blank">
                                       {doc.pageContent}
                                     </ReactMarkdown>
-                                    <p className="mt-2">
-                                      <b>Source:</b>{' '}
-                                      {removeTextBeforeDocs(
-                                        doc.metadata.source,
-                                      )}
-                                    </p>
                                   </AccordionContent>
                                 </AccordionItem>
                               </div>
