@@ -127,9 +127,9 @@ export default function Home() {
     <>
       <Layout>
         <div className="mx-auto flex flex-col gap-4 min-h-screen">
-          <h1 className="text-2xl text-[#E1E1F4] leading-[1.1] tracking-tighter text-left">
+          {/* <h1 className="text-2xl text-[#E1E1F4] leading-[1.1] tracking-tighter text-left">
             Remote Health A.I.
-          </h1>
+          </h1> */}
           <main className="mx-auto flex flex-col gap-2 min-h-screen">
           <div className={styles.cloudform}>
                 <form onSubmit={handleSubmit}>
