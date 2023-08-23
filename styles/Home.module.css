@@ -94,15 +94,15 @@
 }
 
 .usermessage {
-  background: #ffffff;
+  background: transparent;
   padding: 1rem;
-  color: #000;
+  color: #aaa;
 }
 
 .usermessagewaiting {
   padding: 1rem;
   color: #000;
-  background: linear-gradient(to left, #07080938, #1a1c2024, #07080936);
+  background: transparent;
   background-size: 200% 200%;
   background-position: -100% 0;
   animation: loading-gradient 2s ease-in-out infinite;
@@ -120,9 +120,9 @@
 }
 
 .apimessage {
-  background: #f9fafb;
+  background: transparent;
   padding: 1rem;
-  color: #000;
+  color: #f9fafb;
   animation: fadein 0.5s;
 }
 
@@ -190,12 +190,13 @@
 .cloud {
   width: 75vw;
   height: 65vh;
-  background: #ffffff;
+  background: transparent;
   border-radius: 0.5rem;
-  border: 1px solid #d9d9e3;
+  border: 0px solid #d9d9e3;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #f9fafb;
 }
 
 .pointsnormal {

@@ -39,7 +39,6 @@ export default function Home() {
 
   useEffect(() => {
     textAreaRef.current?.focus();
-    messageListRef.current?.scrollTo(0, messageListRef.current.scrollHeight);
   }, []);
 
   //handle form submission
@@ -81,7 +80,7 @@ export default function Home() {
         }),
       });
       const data = await response.json();
-      console.log('data', data);
+      // console.log('data', data);
 
       if (data.error) {
         setError(data.error);
@@ -99,12 +98,10 @@ export default function Home() {
           history: [...state.history, [question, data.text]],
         }));
       }
-      console.log('messageState', messageState);
+      // console.log('messageState', messageState);
 
       setLoading(false);
 
-      //scroll to bottom
-      messageListRef.current?.scrollTo(0, messageListRef.current.scrollHeight);
     } catch (error) {
       setLoading(false);
       setError('An error occurred while fetching the data. Please try again.');
@@ -129,98 +126,12 @@ export default function Home() {
   return (
     <>
       <Layout>
-        <div className="mx-auto flex flex-col gap-4">
+        <div className="mx-auto flex flex-col gap-4 min-h-screen">
           <h1 className="text-2xl text-[#E1E1F4] leading-[1.1] tracking-tighter text-left">
-            Remote Health Premium Plus A.I.
+            Remote Health A.I.
           </h1>
-          <main className={styles.main}>
-            <div className={styles.cloud}>
-              <div ref={messageListRef} className={styles.messagelist}>
-                {messages.map((message, index) => {
-                  let icon;
-                  let className;
-                  if (message.type === 'apiMessage') {
-                    icon = (
-                      <Image
-                        key={index}
-                        src="/feather-dark.png"
-                        alt="AI"
-                        width="40"
-                        height="40"
-                        className={styles.boticon}
-                        priority
-                      />
-                    );
-                    className = styles.apimessage;
-                  } else {
-                    icon = (
-                      <Image
-                        key={index}
-                        src="/birdicon-3.png"
-                        alt="Me"
-                        width="30"
-                        height="30"
-                        className={styles.usericon}
-                        priority
-                      />
-                    );
-                    // The latest message sent by the user will be animated while waiting for a response
-                    className =
-                      loading && index === messages.length - 1
-                        ? styles.usermessagewaiting
-                        : styles.usermessage;
-                  }
-                  return (
-                    <>
-                      <div key={`chatMessage-${index}`} className={className}>
-                        {icon}
-                        <div className={styles.markdownanswer}>
-                          <ReactMarkdown linkTarget="_blank">
-                            {message.message}
-                          </ReactMarkdown>
-                        </div>
-                      </div>
-                      {message.sourceDocs && (
-                        <div
-                          className="p-5"
-                          key={`sourceDocsAccordion-${index}`}
-                        >
-                          <Accordion
-                            type="single"
-                            collapsible
-                            className="flex-col"
-                          >
-                            <AccordionItem value={`item-${index}`}>
-                              <AccordionTrigger>
-                                <h3>Sources</h3>
-                              </AccordionTrigger>
-                              <AccordionContent>
-                                <Accordion
-                                  type="single"
-                                  collapsible
-                                  className="flex-col"
-                                >
-                                  {message.sourceDocs.map((doc, index) => (
-                                    <div key={`messageSourceDocs-${index}`}>
-                                      <h3><b>Source {index + 1}</b></h3>
-                                      <ReactMarkdown linkTarget="_blank">
-                                        {doc.pageContent}
-                                      </ReactMarkdown>
-                                    </div>
-                                  ))}
-                                </Accordion>
-                              </AccordionContent>
-                            </AccordionItem>
-                          </Accordion>
-                        </div>
-                      )}
-                    </>
-                  );
-                })}
-              </div>
-            </div>
-            <div className={styles.center}>
-              <div className={styles.cloudform}>
+          <main className="mx-auto flex flex-col gap-2 min-h-screen">
+          <div className={styles.cloudform}>
                 <form onSubmit={handleSubmit}>
                   <textarea
                     disabled={loading}
@@ -233,8 +144,8 @@ export default function Home() {
                     name="userInput"
                     placeholder={
                       loading
-                        ? 'Waiting for response 🐣'
-                        : 'Ask a question... 🐥'
+                        ? `${query}Waiting for response 🐣`
+                        : `${query}Ask a question... 🐥`
                     }
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
@@ -262,6 +173,97 @@ export default function Home() {
                   </button>
                 </form>
               </div>
+            <div className={styles.cloud}>
+              <div ref={messageListRef} className={styles.messagelist}>
+                {messages.slice(0).reverse().map((message, index) => {
+                  let icon;
+                  let className;
+                  if (index > 0) {
+                    return;
+                  }
+                  if (message.type === 'apiMessage') {
+                    icon = (
+                      <Image
+                        key={index}
+                        src="/egg.gif"
+                        alt="AI"
+                        width="80"
+                        height="80"
+                        className={styles.boticon}
+                        priority
+                      />
+                    );
+                    className = styles.apimessage;
+                  } else {
+                    icon = (
+                      <Image
+                        key={index}
+                        src="/birdicon-3.png"
+                        alt="Me"
+                        width="30"
+                        height="30"
+                        className={styles.usericon}
+                        priority
+                      />
+                    );
+                    // The latest message sent by the user will be animated while waiting for a response
+                    className =
+                      loading && index === messages.length - 1
+                        ? styles.usermessagewaiting
+                        : styles.usermessage;
+                  }
+                  return (
+                    <>
+                      <div key={`chatMessage-${index}`} className={className}>
+                        {icon}
+                        <div>
+                          <ReactMarkdown linkTarget="_blank">
+                            {message.message}
+                          </ReactMarkdown>
+                        </div>
+                      </div>
+                      {message.sourceDocs && (
+                        <div
+                          className="bg-transparent p-5"
+                          key={`sourceDocsAccordion-${index}`}
+                        >
+                          <Accordion
+                            type="single"
+                            collapsible
+                            className="flex-col"
+                          >
+                            <AccordionItem value={`item-${index}`}>
+                              <AccordionTrigger>
+                                <h3>Sources</h3>
+                              </AccordionTrigger>
+                              <AccordionContent>
+                                <Accordion
+                                  type="single"
+                                  collapsible
+                                  className="flex-col"
+                                >
+                                  {message.sourceDocs.map((doc, index) => (
+                                    <div key={`messageSourceDocs-${index}`}>
+                                      <h3><b>Source {index + 1}</b></h3>
+                                      <ReactMarkdown linkTarget="_blank">
+                                        {doc.pageContent}
+                                      </ReactMarkdown>
+                                      <br></br>
+                                    </div>
+                                  ))}
+                                </Accordion>
+                              </AccordionContent>
+                            </AccordionItem>
+                          </Accordion>
+                        </div>
+                      )}
+                    </>
+                  );
+                })}
+              </div>
+            </div>
+            <div className={styles.center}>
+              
             </div>
             {error && (
               <div className="border border-red-400 rounded-md p-4">
