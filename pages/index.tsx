@@ -190,20 +190,27 @@ export default function Home() {
                             collapsible
                             className="flex-col"
                           >
-                            {message.sourceDocs.map((doc, index) => (
-                              <div key={`messageSourceDocs-${index}`}>
-                                <AccordionItem value={`item-${index}`}>
-                                  <AccordionTrigger>
-                                    <h3>Source {index + 1}</h3>
-                                  </AccordionTrigger>
-                                  <AccordionContent>
-                                    <ReactMarkdown linkTarget="_blank">
-                                      {doc.pageContent}
-                                    </ReactMarkdown>
-                                  </AccordionContent>
-                                </AccordionItem>
-                              </div>
-                            ))}
+                            <AccordionItem value={`item-${index}`}>
+                              <AccordionTrigger>
+                                <h3>Sources</h3>
+                              </AccordionTrigger>
+                              <AccordionContent>
+                                <Accordion
+                                  type="single"
+                                  collapsible
+                                  className="flex-col"
+                                >
+                                  {message.sourceDocs.map((doc, index) => (
+                                    <div key={`messageSourceDocs-${index}`}>
+                                      <h3><b>Source {index + 1}</b></h3>
+                                      <ReactMarkdown linkTarget="_blank">
+                                        {doc.pageContent}
+                                      </ReactMarkdown>
+                                    </div>
+                                  ))}
+                                </Accordion>
+                              </AccordionContent>
+                            </AccordionItem>
                           </Accordion>
                         </div>
                       )}
@@ -225,7 +232,9 @@ export default function Home() {
                     id="userInput"
                     name="userInput"
                     placeholder={
-                      loading ? 'Waiting for response 🐣' : 'Ask a question... 🐥'
+                      loading
+                        ? 'Waiting for response 🐣'
+                        : 'Ask a question... 🐥'
                     }
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
