@@ -25,7 +25,7 @@ export default function Home() {
   }>({
     messages: [
       {
-        message: 'What would you like to know?',
+        message: 'What would you like to know about Remote Health?',
         type: 'apiMessage',
       },
     ],
@@ -145,7 +145,7 @@ export default function Home() {
                     placeholder={
                       loading
                         ? `${query}Waiting for response 🐣`
-                        : `${query}Ask a question... 🐥`
+                        : `${query}Ask about Remote Health... 🐥`
                     }
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
