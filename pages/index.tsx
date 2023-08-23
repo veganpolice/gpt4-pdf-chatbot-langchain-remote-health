@@ -25,7 +25,7 @@ export default function Home() {
   }>({
     messages: [
       {
-        message: 'I can answer questions about your coverage or how to use your insurance',
+        message: 'I can tell you about your benefits or how to use Remote Health',
         type: 'apiMessage',
       },
     ],
@@ -145,7 +145,7 @@ export default function Home() {
                     placeholder={
                       loading
                         ? `${query}Waiting for response... 🐣`
-                        : `${query}Any another questions? 🐥`
+                        : `${query}Any questions? 🐥`
                     }
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
